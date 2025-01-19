@@ -1,6 +1,6 @@
 return
 {
-    "neanias/everforest-nvim",
+    "catppuccin/nvim",
     version = false,
     lazy = false,
     priority = 1000,

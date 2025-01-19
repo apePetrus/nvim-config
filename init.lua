@@ -1,5 +1,5 @@
 require("config.lazy")
-require("everforest").load()
+vim.cmd.colorscheme "catppuccin"
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
