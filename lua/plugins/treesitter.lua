@@ -9,6 +9,8 @@ return {
             highlight = { enable = true },
             indent = { enable = true },
             })
-        end
+        end,
+
+        vim.treesitter.language.register('php', 'inc')
     }
 }

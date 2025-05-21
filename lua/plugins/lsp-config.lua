@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "intelephense", "pyright" },
+                ensure_installed = { "lua_ls", "intelephense" },
             })
         end,
     },
@@ -21,9 +21,6 @@ return {
             lspconfig.intelephense.setup({
                 filetypes = { 'php', 'inc' },
             })
-            lspconfig.pyright.setup({})
-            lspconfig.html_lsp.setup({})
-            lspconfig.clangd.setup({})
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
             vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
