@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = false
+vim.g.lazyvim_php_lsp = "intelephense"
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
