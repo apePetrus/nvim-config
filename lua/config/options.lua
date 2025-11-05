@@ -16,7 +16,7 @@ vim.opt.fixendofline = false
 vim.opt.expandtab = false
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "php", "inc" },
+  pattern = { "php", "inc", "sql" },
   callback = function()
     vim.opt_local.expandtab = true
   end,
