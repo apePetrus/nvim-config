@@ -1,7 +1,8 @@
 return {
-    {
-        'nvim-treesitter/nvim-treesitter',
-        opts = {},
-        vim.treesitter.language.register('php', 'inc'),
-    },
+	'nvim-treesitter/nvim-treesitter',
+	opts = {
+		ensure_installed = {
+			lua
+		}
+	},
 }

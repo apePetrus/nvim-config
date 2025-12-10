@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = false
-vim.g.lazyvim_php_lsp = "intelephense"
+vim.g.colorscheme = 'catppuccin'
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
