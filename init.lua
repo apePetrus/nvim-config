@@ -1,3 +1,19 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+vim.g.autoformat = false
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.wrap = false
+vim.opt.eol = false
+vim.opt.fixendofline = false
+
+vim.opt.expandtab = false
+
 vim.pack.add({
 	{ src = 'https://github.com/catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 	{ src = 'https://github.com/nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -9,10 +25,11 @@ vim.pack.add({
 	'https://github.com/nvim-telescope/telescope.nvim'
 })
 
+vim.cmd.colorscheme('catppuccin')
+
 require("plugins.treesitter")
 require('plugins.mason')
 
-require("config.options")
 require("config.keymaps")
 
 local telescope = require('telescope')
@@ -37,3 +54,15 @@ vim.keymap.set('n', '<leader><space>', builtin.find_files)
 vim.keymap.set('n', '<leader>/',       builtin.live_grep)
 vim.keymap.set('n', '<leader>,',       builtin.buffers)
 
+vim.filetype.add({
+	extension = {
+		inc = 'php',
+	},
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "php", "inc", "sql" },
+	callback = function()
+		vim.opt_local.expandtab = true
+	end,
+})
