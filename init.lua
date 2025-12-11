@@ -54,10 +54,14 @@ telescope.setup({
 require('telescope').load_extension('fzf')
 
 local builtin = require('telescope.builtin')
+local map  = vim.keymap.set
 
-vim.keymap.set('n', '<leader><space>', builtin.find_files)
-vim.keymap.set('n', '<leader>/',       builtin.live_grep)
-vim.keymap.set('n', '<leader>,',       builtin.buffers)
+map('n', '<leader><space>', builtin.find_files)
+map('n', '<leader>/',       builtin.live_grep)
+map('n', '<leader>,',       builtin.buffers)
+map('n', '<leader>gs',      builtin.git_status)
+map('n', '<leader>gc',      builtin.git_commits)
+map('n', '<leader>gf',      builtin.git_files)
 
 vim.filetype.add({
 	extension = {
