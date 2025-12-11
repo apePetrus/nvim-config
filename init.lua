@@ -15,6 +15,7 @@ vim.opt.fixendofline = false
 vim.opt.expandtab = false
 
 vim.pack.add({
+	'https://github.com/chentoast/marks.nvim',
 	{ src = 'https://github.com/catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 	{ src = 'https://github.com/nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 	'https://github.com/neovim/nvim-lspconfig',
@@ -26,6 +27,10 @@ vim.pack.add({
 })
 
 vim.cmd.colorscheme('catppuccin')
+
+require('marks').setup({
+	builtin_marks = { '<', '>', '^' },
+})
 
 require("plugins.treesitter")
 require('plugins.mason')
