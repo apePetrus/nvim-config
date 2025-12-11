@@ -1,11 +1,7 @@
-return {
-	"mason-org/mason.nvim",
-	opts = {
-		ensure_installed = {
-			"intelephense",
-		}
-	},
-	config = function()
-		require('mason').setup(opts)
-	end,
-}
+require('mason').setup()
+
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		'intelephense',
+	}
+})

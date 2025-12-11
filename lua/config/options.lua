@@ -15,6 +15,12 @@ vim.opt.fixendofline = false
 
 vim.opt.expandtab = false
 
+vim.filetype.add({
+	extension = {
+		inc = 'php',
+	},
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "php", "inc", "sql" },
   callback = function()
