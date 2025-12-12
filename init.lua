@@ -15,6 +15,10 @@ vim.opt.fixendofline = false
 
 vim.opt.expandtab = false
 
+-- general keymaps
+vim.keymap.set('n', '<C-q>', ':bd<CR>', {})
+vim.keymap.set('n', '<C-p>', ':let @+ = expand("%")<CR>', {})
+
 
 -- plugins
 vim.pack.add({
@@ -34,8 +38,6 @@ vim.cmd.colorscheme('catppuccin')
 require('marks').setup({
 	builtin_marks = { '<', '>', '^' },
 })
-
-require("config.keymaps")
 
 
 -- telescope
