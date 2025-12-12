@@ -1,3 +1,4 @@
+-- basic setup
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = false
@@ -14,6 +15,8 @@ vim.opt.fixendofline = false
 
 vim.opt.expandtab = false
 
+
+-- plugins
 vim.pack.add({
 	'https://github.com/chentoast/marks.nvim',
 	{ src = 'https://github.com/catppuccin/nvim', name = 'catppuccin', priority = 1000 },
@@ -32,11 +35,12 @@ require('marks').setup({
 	builtin_marks = { '<', '>', '^' },
 })
 
-require("plugins.treesitter")
 require('plugins.mason')
 
 require("config.keymaps")
 
+
+-- telescope
 local telescope = require('telescope')
 telescope.setup({
 	defaults = {
@@ -62,6 +66,16 @@ map('n', '<leader>,',       builtin.buffers)
 map('n', '<leader>gs',      builtin.git_status)
 map('n', '<leader>gc',      builtin.git_commits)
 map('n', '<leader>gf',      builtin.git_files)
+
+
+-- treesitter
+require('nvim-treesitter.configs').setup({
+	ensure_installed = {
+		'lua', 'php', 'javascript', 'typescript', 'markdown', 'sql', 'c'
+	},
+	highlight = { enabled = true },
+	indent = { enabled = true },
+})
 
 vim.filetype.add({
 	extension = {
