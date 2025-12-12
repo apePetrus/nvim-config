@@ -35,8 +35,6 @@ require('marks').setup({
 	builtin_marks = { '<', '>', '^' },
 })
 
-require('plugins.mason')
-
 require("config.keymaps")
 
 
@@ -88,4 +86,12 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.expandtab = true
 	end,
+})
+
+-- mason
+require('mason').setup()
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		'intelephense',
+	},
 })
